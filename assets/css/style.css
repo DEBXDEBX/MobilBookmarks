@@ -1,0 +1,168 @@
+/* Reset */
+* {
+  /* padding will not add to the ACTUALLY WIDTH OF THE BOX */
+  box-sizing: border-box;
+
+  margin: 0;
+  padding: 0;
+}
+/* Main Styling */
+html,
+body {
+  font-family: "Chelsea Market", cursive;
+  line-height: 1.7em;
+  background-color: black;
+}
+a {
+  text-decoration: none;
+}
+/* Create Variables */
+:root {
+  --primary-color: #0f0;
+  --secondary-color: #0af30a;
+}
+/* use Variables */
+h1 {
+  color: var(--primary-color);
+  text-shadow: 2px 2px var(--secondary-color);
+}
+#catForm,
+#bookmarkForm {
+  display: none;
+}
+.active {
+  color: white;
+}
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  padding: 3px;
+  margin: 3px;
+}
+h3 {
+  margin: 22px;
+  text-align: center;
+  background-color: #4e5357;
+  border-radius: 15px;
+  padding: 0.45rem;
+  color: white;
+  text-align: center;
+}
+h4 {
+  text-align: center;
+}
+nav ul li {
+  list-style: none;
+  background-color: #d0215cbd;
+  color: rgb(0, 0, 0);
+  padding: 3px 10px;
+  margin: 4px 10px;
+  border-radius: 10px 10px 0px 0px;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+nav ul li:hover {
+  color: rgb(255, 255, 255);
+}
+
+.success,
+.error {
+  color: white;
+  padding: 20px;
+  text-align: center;
+  width: 50%;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.success {
+  background: green;
+}
+
+.error {
+  background: red;
+}
+h3 > span {
+  font-weight: 900;
+  color: #2de11d;
+}
+#catForm,
+#bookmarkForm {
+  max-width: 70%;
+  margin: 14px auto;
+}
+.delete-item {
+  color: red;
+  display: inline;
+}
+.moveUp {
+  color: green;
+  display: inline;
+}
+.moveDown {
+  color: blue;
+  display: inline;
+}
+/* this hides and shows when you hover */
+.spanDiv {
+  display: none;
+}
+.myFlexItem:hover .spanDiv {
+  text-align: center;
+  display: block;
+}
+span {
+  font-weight: bold;
+  margin: 0px 7px;
+}
+
+.myFlexItem:hover .delete-item {
+  text-align: center;
+  display: inline;
+}
+a {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  margin: 8px;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+  color: rgb(42, 6, 248);
+  text-decoration: none;
+}
+.myFlexItem {
+  background: #0af30a;
+  border-left: 4mm ridge #538956;
+  border-bottom: thick double #203c63;
+  margin: 20px 7px 20px 7px;
+  padding: 5px 10px 5px 10px;
+  /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7); */
+  box-shadow: 3px 3px 3px rgb(103, 241, 11);
+  border-radius: 10% / 50%;
+}
+.myFlexBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 3px 10px 3px 10px;
+}
+
+/* The headings are h3  */
+h3 {
+  color: var(--primary-color);
+  text-shadow: 2px 2px black;
+  text-align: center;
+}
+/* The gap between the show form icons  */
+#catAdd,
+#bookmarkAdd {
+  margin: 0px 46px;
+}
