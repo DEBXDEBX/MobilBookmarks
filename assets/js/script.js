@@ -23,6 +23,32 @@ $(document).ready(function() {
 });
 //The start of program exicution.
 window.onload = function() {
+  // binary code
+  let textOne = "";
+  for (let i = 0; i < 250; i++) {
+    textOne += "0001\t0010\t0011\t0100\t0101\t0110\t0111\t1000\t";
+  }
+  // binary code
+  let textTwo = "";
+  for (let i = 0; i < 250; i++) {
+    // textTwo += "1000\t0111\t0110\t0101\t0100\t0011\t0010\t0001\t";
+    textTwo += "debx\tdebx\tdebx\tdebx\tdebx\tdebx\tdebx\tdebx";
+  }
+  let binaryArray = [textOne, textTwo];
+  console.log(binaryArray[0]);
+  console.log(binaryArray[1]);
+  let index = 0;
+  setInterval(function() {
+    if (index === 1) {
+      this.document.querySelector("#binaryPtag").textContent =
+        binaryArray[index];
+      index = 0;
+    }
+    this.document.querySelector("#binaryPtag").textContent = binaryArray[index];
+    index++;
+
+    console.log("debx");
+  }, 2000);
   startUp();
 };
 //Start Up
