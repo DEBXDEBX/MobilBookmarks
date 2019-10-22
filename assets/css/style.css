@@ -166,3 +166,8 @@ h3 {
 #bookmarkAdd {
   margin: 0px 46px;
 }
+
+.delete-category {
+  margin-left: 40px;
+  color: red;
+}

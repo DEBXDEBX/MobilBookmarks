@@ -88,27 +88,36 @@ el.addShowFormBookmark.addEventListener("click", e => {
 });
 
 el.catList.addEventListener("click", e => {
-  //check if control was down, if so delete
-  if (e.ctrlKey) {
-    // get the index from the html
+  //You have to uyse the name to delete the index won't always work
+  // event delegation
+  if (e.target.classList.contains("delete-category")) {
+    let deleteName = e.target.parentElement.parentElement.textContent;
+    console.log(e.target.parentElement.parentElement.textContent);
+    if (
+      confirm(
+        `Do you want to delete the ${e.target.parentElement.parentElement.textContent} category?`
+      )
+    ) {
+      // let index = e.target.dataset.index;
+      // index = parseInt(index);
+      // catIndex = index;
+      // arrayOfTabs.splice(catIndex, 1);
 
-    let index = e.target.dataset.index;
-    index = parseInt(index);
-    catIndex = index;
-    arrayOfTabs.splice(catIndex, 1);
-    deleteAudio.play();
-    // save
-    save();
+      //Delete by name
 
-    if (arrayOfTabs.length === 0) {
-      startUp();
+      deleteAudio.play();
+      // save
+      save();
+
+      if (arrayOfTabs.length === 0) {
+        startUp();
+        return;
+      }
+
+      renderCategorys();
       return;
     }
-
-    renderCategorys();
-    return;
   }
-
   // event delegation
   if (e.target.classList.contains("cat")) {
     // set's the current target active
@@ -270,22 +279,19 @@ el.bookmarkList.addEventListener("click", e => {
   }
 
   if (e.target.classList.contains("delete-item")) {
-    if (!e.ctrlKey) {
-      warning1Audio.play();
-      display.showAlert(
-        "You have to hold down ctrl key to make a deletion",
-        "error"
-      );
+    if (
+      confirm(
+        `Do you want to delete the ${e.target.parentElement.parentElement.previousSibling.textContent} bookmark?`
+      )
+    ) {
+      let deleteIndex = e.target.parentElement.dataset.index;
+      deleteIndex = parseInt(deleteIndex);
+      arrayOfTabs[catIndex].arrayOfBookmarks.splice(deleteIndex, 1);
+      deleteAudio.play();
+      // save
+      save();
+      renderBookmarks();
       return;
     }
-    // get the index from the html
-    let deleteIndex = e.target.parentElement.dataset.index;
-    deleteIndex = parseInt(deleteIndex);
-    arrayOfTabs[catIndex].arrayOfBookmarks.splice(deleteIndex, 1);
-    deleteAudio.play();
-    // save
-    save();
-    renderBookmarks();
-    return;
   }
 }); // End

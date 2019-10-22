@@ -51,7 +51,11 @@ class Display {
     let html = "";
 
     mappedArray.forEach((element, index) => {
-      html += `<li data-index="${index}" class="cat">${element}</li>`;
+      html += `<li data-index="${index}" class="cat">${element}<span title='Delete' data-index="${index}" ><i
+      title="Delete Category"
+      class="delete-category fas fa-trash-alt"
+    ></i
+  ></span></li>`;
     });
     this.elements.catList.innerHTML = html;
 
