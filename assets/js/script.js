@@ -104,6 +104,11 @@ el.catList.addEventListener("click", e => {
       // arrayOfTabs.splice(catIndex, 1);
 
       //Delete by name
+      arrayOfTabs.forEach(function(item, index) {
+        if (item.name === deleteName) {
+          arrayOfTabs.splice(index, 1);
+        }
+      });
 
       deleteAudio.play();
       // save
