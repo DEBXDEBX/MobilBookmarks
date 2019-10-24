@@ -134,7 +134,7 @@ a {
 }
 
 a:hover {
-  color: rgb(42, 6, 248);
+  color: white;
   text-decoration: none;
 }
 .myFlexItem {
@@ -168,11 +168,14 @@ h3 {
 }
 
 .delete-category {
-  margin-left: 40px;
+  /* margin-left: 40px; */
   color: black;
 }
 .delete-category:hover {
   color: white;
+}
+#catSpan {
+  margin-right: 40px;
 }
 /* ********************* */
 #binary {

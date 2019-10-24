@@ -51,7 +51,7 @@ class Display {
     let html = "";
 
     mappedArray.forEach((element, index) => {
-      html += `<li data-index="${index}" class="cat">${element}<span title='Delete' data-index="${index}" ><i
+      html += `<li class="catClass"><span data-index="${index}" class="cat" id="catSpan">${element}</span><span title='Delete' data-index="${index}" ><i
       title="Delete Category"
       class="delete-category fas fa-trash-alt"
     ></i
@@ -61,7 +61,7 @@ class Display {
 
     this.displayBlock(this.elements.catList);
     // color tabs
-    let tabList = document.getElementsByClassName("cat");
+    let tabList = document.getElementsByClassName("catClass");
     this.colorSetOfTabs(tabList);
   }
 
