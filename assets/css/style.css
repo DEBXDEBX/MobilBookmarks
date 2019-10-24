@@ -108,9 +108,8 @@ h3 > span {
   color: blue;
   display: inline;
 }
-/* this hides and shows when you hover */
 .spanDiv {
-  display: none;
+  text-align: center;
 }
 .myFlexItem:hover .spanDiv {
   text-align: center;
@@ -118,7 +117,7 @@ h3 > span {
 }
 span {
   font-weight: bold;
-  margin: 0px 7px;
+  margin: 0px 11px;
 }
 
 .myFlexItem:hover .delete-item {
@@ -148,6 +147,7 @@ a:hover {
   box-shadow: 3px 3px 3px rgb(103, 241, 11);
   border-radius: 10% / 50%;
 }
+
 .myFlexBox {
   display: flex;
   flex-wrap: wrap;
@@ -169,9 +169,11 @@ h3 {
 
 .delete-category {
   margin-left: 40px;
-  color: red;
+  color: black;
 }
-
+.delete-category:hover {
+  color: white;
+}
 /* ********************* */
 #binary {
   display: flex;
