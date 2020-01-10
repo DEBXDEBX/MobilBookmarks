@@ -141,4 +141,19 @@ class Display {
       document.querySelector(".alert").remove();
     }, displayTime);
   } // End showAlert()
+
+  //Method
+  onlineMessage() {
+    this.elements.onLineStatus.innerHTML = `<H1 class="online">Online</H1>`;
+    // Timeout after 4 sec
+    let displayTime = 7000;
+    setTimeout(function() {
+      document.querySelector(".online").remove();
+    }, displayTime);
+  }
+
+  //Method
+  offlineMessage() {
+    this.elements.onLineStatus.innerHTML = `<H1 class="offline">Offline</H1>`;
+  }
 } // End class

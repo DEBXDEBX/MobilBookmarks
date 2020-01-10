@@ -197,3 +197,14 @@ h3 {
   justify-content: center; */
   /* color: red; */
 }
+
+/* on or off line  */
+.online,
+.offline {
+  text-align: center;
+}
+
+.offline {
+  color: red;
+  text-shadow: 2px 2px red;
+}

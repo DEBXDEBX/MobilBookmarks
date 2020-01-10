@@ -337,3 +337,13 @@ el.bookmarkList.addEventListener("click", e => {
     }
   }
 }); // End
+
+// check if on or off line
+if (navigator.onLine) {
+  display.onlineMessage();
+} else {
+  display.offlineMessage();
+}
+// listen for events on or off line
+window.addEventListener("online", e => display.onlineMessage());
+window.addEventListener("offline", e => display.offlineMessage());
