@@ -259,7 +259,14 @@ el.cancelCatBtn.addEventListener("click", (e) => {
   el.catForm.reset();
   // hide form
   display.displayNone(el.catForm);
-  display.paintCategorys(mapNamesOut(arrayOfTabs));
+  // get rid of active class
+  let activeTabList = document.getElementsByClassName("cat active");
+  if (activeTabList) {
+    let newArray = Array.from(activeTabList);
+    for (let item of newArray) {
+      item.classList.remove("active");
+    }
+  }
 }); // End
 
 el.addBookmarkBtn.addEventListener("click", (e) => {
