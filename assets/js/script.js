@@ -17,50 +17,15 @@ let warning2Audio = document.querySelector("#warning2Audio");
 const el = new Elements();
 // Pass elements to display
 const display = new Display(el, $);
-let binaryPtag = document.querySelector("#binaryPtag");
+let binaryH1tag = document.querySelector("#binaryH1Tag");
 //This enables JQuery ToolTips
 $(document).ready(function () {
   $('[data-toggle="tooltip"]').tooltip();
 });
 //The start of program exicution.
 window.onload = function () {
-  // binary code
-  let textOne = "";
-  for (let i = 0; i < 243; i++) {
-    textOne += "0001\t0010\t0011\t0100\t0101\t0110\t0111\t1000\t";
-  }
-  // binary code
-  let textTwo = "";
-  for (let i = 0; i < 243; i++) {
-    textTwo += "1000\t0111\t0110\t0100\t0100\t0011\t0010\t0001\t";
-  }
-  // binary code
-  let textThree = "";
-  for (let i = 0; i < 243; i++) {
-    textThree += "0100\t0011\t0010\t0001\t0111\t0011\t0110\t0101\t";
-  }
-  // binary code
-  let textFour = "";
-  for (let i = 0; i < 243; i++) {
-    textFour += "0101\t0100\t0011\t0010\t0001\t0111\t0011\t0110\t";
-  }
-  // binary code
-  let textFive = "";
-  for (let i = 0; i < 243; i++) {
-    textFive += "0011\t0010\t0111\t0110\t1101\t1011\t1100\t1110\t";
-  }
-  let binaryArray = [textOne, textTwo, textThree, textFour, textFive];
-
-  let index = 0;
-  setInterval(function () {
-    if (index === 5) {
-      binaryPtag.textContent = binaryArray[index];
-      index = 0;
-    }
-    binaryPtag.textContent = binaryArray[index];
-    index++;
-  }, 800);
   startUp();
+  showBinary();
 };
 //Start Up
 function startUp() {
@@ -76,6 +41,35 @@ function startUp() {
 //*************************************************** */
 // Helper functions
 //*************************************************** */
+
+const showBinary = () => {
+  // binary code
+  let textOne = "0000 0001 0010 0011 0100 0101 0110 1000";
+
+  // binary code
+  let textTwo = "0001 0010 0011 0100 0101 0110 1000 1001";
+
+  // binary code
+  let textThree = "0010 0011 0100 0101 0110 1000 1001 1010";
+
+  // binary code
+  let textFour = "0011 0100 0101 0110 1000 1001 1010 1011";
+
+  // binary code
+  let textFive = "0100 0101 0110 1000 1001 1010 1011 1100";
+
+  let binaryArray = [textOne, textTwo, textThree, textFour, textFive];
+
+  let index = 0;
+  setInterval(function () {
+    if (index === 5) {
+      binaryH1tag.textContent = binaryArray[index];
+      index = 0;
+    }
+    binaryH1tag.textContent = binaryArray[index];
+    index++;
+  }, 800);
+};
 const getAndShowDate = () => {
   el.todayDate.textContent = new Date().toDateString();
 };
