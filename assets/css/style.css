@@ -208,3 +208,51 @@ h3 {
   color: red;
   text-shadow: 2px 2px red;
 }
+
+/* *********************************** */
+/* google search  */
+#googleSearchContainer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+#googleSearchInput {
+  border: 2px solid var(--primary-color);
+  border-radius: 50px;
+  padding: 10px;
+  color: #e52674;
+}
+#googleSearchInput:focus {
+  border: 2px solid red;
+  border-radius: 50px;
+  outline: none;
+}
+.searchBtn {
+  background-color: #e52674;
+  font-weight: bolder;
+  border: 2px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px;
+  outline: none;
+}
+.searchBtn:hover {
+  background-color: chartreuse;
+  border: 2px solid #e52674;
+  color: #e52674;
+}
+
+#searchForm {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+#searchForm button,
+input {
+  margin: 9px;
+}
+
+#todayDate {
+  text-align: center;
+  color: #e52674;
+}

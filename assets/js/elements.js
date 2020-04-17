@@ -23,7 +23,10 @@ class Elements {
     this.textCat = document.querySelector("#textCat");
     this.textBookmark = document.querySelector("#textBookmark");
     this.textURL = document.querySelector("#textURL");
+
     // online offline status
     this.onLineStatus = document.querySelector("#status");
+    // todays date
+    this.todayDate = document.querySelector("#todayDate");
   }
 }
