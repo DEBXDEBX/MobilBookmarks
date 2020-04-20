@@ -138,11 +138,13 @@ el.addShowFormCat.addEventListener("click", (e) => {
   clickAudio.play();
   display.showCatForm();
   display.displayNone(el.bookmarkList);
+  this.textCat.focus();
 });
 // when You click on the +/icon in the bookmark  heading
 el.addShowFormBookmark.addEventListener("click", (e) => {
   clickAudio.play();
   display.showBookmarkForm();
+  this.textBookmark.focus();
 });
 
 el.catList.addEventListener("click", (e) => {
