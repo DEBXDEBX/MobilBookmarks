@@ -148,7 +148,7 @@ el.addShowFormBookmark.addEventListener("click", (e) => {
 });
 
 el.catList.addEventListener("click", (e) => {
-  //You have to uyse the name to delete the index won't always work
+  //You have to use the name to delete the index won't always work
   // event delegation
   if (e.target.classList.contains("delete-category")) {
     let deleteName = e.target.parentElement.parentElement.textContent;
@@ -180,6 +180,7 @@ el.catList.addEventListener("click", (e) => {
       }
 
       renderCategorys();
+      display.showAlert("You deleted a catagory!", "error");
       return;
     }
   }
@@ -293,6 +294,7 @@ el.addBookmarkBtn.addEventListener("click", (e) => {
   save();
   el.bookmarkForm.reset();
   display.displayNone(el.bookmarkForm);
+  display.showAlert("You added a bookmark!", "success");
   renderBookmarks();
 });
 
@@ -364,6 +366,7 @@ el.bookmarkList.addEventListener("click", (e) => {
       // save
       save();
       renderBookmarks();
+      display.showAlert("You deleted a bookmark!", "success");
       return;
     }
   }
