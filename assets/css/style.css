@@ -41,13 +41,14 @@ nav ul {
   padding: 3px;
   margin: 3px;
 }
-h3 {
+#catHeading,
+#bookmarkHeading {
   margin: 22px;
   text-align: center;
   background-color: #4e5357;
   border-radius: 15px;
   padding: 0.45rem;
-  color: white;
+  color: var(--primary-color);
   text-align: center;
 }
 h4 {
@@ -83,7 +84,12 @@ nav ul li:hover {
 }
 .black {
   background-color: black;
-  border-bottom: 7px solid black;
+}
+.redBorder {
+  border: 10px solid red;
+}
+.greenBorder {
+  border: 10px solid #2de11d;
 }
 /* END CODE FOR MESSAGES  */
 
