@@ -86,10 +86,10 @@ nav ul li:hover {
   background-color: black;
 }
 .redBorder {
-  border: 10px solid red;
+  border: 20px solid red;
 }
 .greenBorder {
-  border: 10px solid #2de11d;
+  border: 20px solid #2de11d;
 }
 /* END CODE FOR MESSAGES  */
 
