@@ -170,25 +170,34 @@
 
     <!-- on or off line  -->
     <div id="status"></div>
+    <ul id="outUlShowReminder"></ul>
+    
+    <ul id="outULShowDateReminder"></ul>
+
+
     <!-- today Date  -->
     <h2 id="todayDate"></h2>
 
     <div id="googleSearchContainer">
-      <form id="searchForm" action="">
+      <form id="searchForm" class="">
         <input
           autocomplete="off"
           type="text"
           name="googleSearch"
           id="googleSearchInput"
+          class="form-control mb-2 mr-sm-2"
         />
-        <button class="searchBtn" id="googleBtn">Search Google</button>
-        <button class="searchBtn" id="mdnBtn">MDN</button>
-        <button class="searchBtn" id="youTubeBtn">You Tube</button>
-        <button class="searchBtn" id="stackOverflowBtn">
+        <button class="btn btn-primary my-2 b-2" id="googleBtn">Search Google</button>
+        <button class="btn btn-primary my-2 b-2" id="mdnBtn">MDN</button>
+        <button class="btn btn-primary my-2 b-2" id="youTubeBtn">You Tube</button>
+        <button class="btn btn-primary my-2 b-2" id="stackOverflowBtn">
           Stack Overflow
         </button>
       </form>
     </div>
+
+
+
 
     <div id="binary">
       <h1 id="binaryH1Tag"></h1>
@@ -207,6 +216,111 @@
     </div>
     <!-- end of modal  -->
 
+    <!-- ***************************************** reminder code ***************************************** -->
+  
+
+    <div id="remindersDiv">
+
+      <!-- ***************************************** date remider code ******************* -->
+      <div class="dateReminder">
+      <h4>Date Reminders</h4>
+      <ul id="outULEditDateReminder"></ul>
+      <h4>Date Reminder Form</h4>
+      <form id="formDateReminder" action="">
+      
+        <div class="form-group">
+          <input
+            id="inDateDateReminder"
+            type="date"
+      
+            class="form-control"
+          
+          />
+        </div>
+        <div class="form-group">
+          <input
+            id="inTextDateReminder"
+            type="text"
+            autofocus
+            autocomplete="off"
+            class="form-control"
+            placeholder="Reminder"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            id="inBtnSaveDateReminder"
+            class="btn btn-primary form-control"
+            type="submit"
+            value="Save Date Reminder"
+          />
+        </div>
+        <div class="form-group">
+          <button
+            id="inBtnCancelDateReminder"
+            class="btn btn-warning form-control"
+            type="button"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+      </div>
+      
+      <!-- **************************************date reminder code end************************************* -->
+      
+       <!-- ******************************weeklyReminder code ********************** -->
+      <div class="weeklyReminder">
+                    <h4>Weekly Reminders</h4>
+              <ul id="outUlEditReminder"></ul>
+          
+      
+              <h4>Weekly Reminder Form</h4>
+            <form id="formReminder">
+              <div class="form-group">
+                <select id="inSelectDayCode" name="cars">
+                  <option value="0">Sunday</option>
+                  <option value="1">Monday</option>
+                  <option value="2">Tuesday</option>
+                  <option value="3">Wednesday</option>
+                  <option value="4">Thursday</option>
+                  <option value="5">Fridayday</option>
+                  <option value="6">Saturday</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <input
+                  id="inTextReminder"
+                  type="text"
+                  autofocus
+                  autocomplete="off"
+                  class="form-control"
+                  placeholder="Reminder"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  id="inBtnSaveReminder"
+                  class="btn btn-primary form-control"
+                  type="submit"
+                  value="Save Reminder"
+                />
+              </div>
+              <div class="form-group">
+                <button
+                  id="inBtnCancelReminder"
+                  class="btn btn-warning form-control"
+                  type="button"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- *************************weeklyReminder code end ************** -->
+        </div>
+
+        <h5 id="pie">&#8719;</h5>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script
@@ -231,6 +345,9 @@
     <script type="text/javascript" src="assets/js/storageLS.js"></script>
     <script type="text/javascript" src="assets/js/tab.js"></script>
     <script type="text/javascript" src="assets/js/elements.js"></script>
+    <script type="text/javascript" src="assets/js/Reminder.js"></script>
+    <script type="text/javascript" src="assets/js/DateReminder.js"></script>
+    <script type="text/javascript" src="assets/js/arrayStorageLS.js"></script>
     <script type="text/javascript" src="assets/js/script.js"></script>
   </body>
 </html>

@@ -10,6 +10,9 @@ class Elements {
     // select forms
     this.catForm = document.querySelector("#catForm");
     this.bookmarkForm = document.querySelector("#bookmarkForm");
+    // Form Reminder
+    this.formReminder = document.querySelector("#formReminder");
+    this.formDateReminder = document.querySelector("#formDateReminder");
     // select btns
     this.addCatBtn = document.querySelector("#catAddBtn");
     this.cancelCatBtn = document.querySelector("#catCancel");
@@ -32,5 +35,33 @@ class Elements {
     this.messageDisplay = document.querySelector("#displayMessage");
     // select message border
     this.messageBorder = document.querySelector("#modalBorder");
+
+    // select the lists
+    this.outUlShowReminder = document.querySelector("#outUlShowReminder");
+    this.outUlEditReminder = document.querySelector("#outUlEditReminder");
+    this.outULShowDateReminder = document.querySelector(
+      "#outULShowDateReminder"
+    );
+    this.outULEditDateReminder = document.querySelector(
+      "#outULEditDateReminder"
+    );
+    // select btn
+    this.inBtnSaveReminder = document.querySelector("#inBtnSaveReminder");
+    this.inBtnCancelReminder = document.querySelector("#inBtnCancelReminder");
+    this.pieBtn = document.querySelector("#pie");
+    this.inBtnSaveDateReminder = document.querySelector(
+      "#inBtnSaveDateReminder"
+    );
+    this.inBtnCancelDateReminder = document.querySelector(
+      "#inBtnCancelDateReminder"
+    );
+    // select input
+    this.inSelectDayCode = document.querySelector("#inSelectDayCode");
+    this.inTextReminder = document.querySelector("#inTextReminder");
+    this.inDateDateReminder = document.querySelector("#inDateDateReminder");
+    this.inTextDateReminder = document.querySelector("#inTextDateReminder");
+
+    // Div
+    this.remindersDiv = document.querySelector("#remindersDiv");
   }
 }
