@@ -51,9 +51,7 @@ nav ul {
   color: var(--primary-color);
   text-align: center;
 }
-h4 {
-  text-align: center;
-}
+
 nav ul li {
   list-style: none;
   background-color: #d0215cbd;
@@ -224,10 +222,7 @@ h3 {
   justify-content: center;
   margin: 0 auto;
 }
-#todayDate {
-  text-align: center;
-  color: #e52674;
-}
+
 .cat:hover {
   cursor: pointer;
 }

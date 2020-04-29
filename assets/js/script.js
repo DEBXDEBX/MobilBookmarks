@@ -1,6 +1,6 @@
 "use strict";
 //Global variable's
-let arrayOfTabs = [];
+let arrayOfTabs;
 let catIndex = -243;
 let bookmarkIndex = -243;
 // weekly reminder array
@@ -44,6 +44,7 @@ window.onload = function () {
 };
 //Start Up
 function startUp() {
+  arrayOfTabs = bookmarkStorage.getArrayFromLS();
   renderCategorys();
   // If you have Home catogory display it's bookmarks
   HomeList();
@@ -88,8 +89,7 @@ const filterDateArray = (arrayDateReminder) => {
       return currentYear === item.year && currentMonth + 1 === item.month;
     });
     return [...showArray, ...nextMonthArray];
-  }
-  if (currentMonth === 12) {
+  } else {
     let nextJanuaryArray = arrayDateReminder.filter((item) => {
       return currentYear + 1 === item.year && 1 === item.month;
     });
@@ -148,12 +148,17 @@ const HomeList = () => {
   }
 };
 
-function save() {
+function saveBookmarks() {
   // save
-
   bookmarkStorage.saveArrayToLS(arrayOfTabs);
 }
 
+function saveWeeklyReminders() {
+  reminderStorage.saveArrayToLS(arrayWeeklyReminder);
+}
+function saveDateReimnders() {
+  dateReminderStorage.saveArrayToLS(arrayDateReminder);
+}
 // create a new array with only the items name
 function mapNamesOut(array) {
   let mapedArray = array.map((item) => {
@@ -179,7 +184,6 @@ function sortArrayByName(array) {
 } // End sortArrayByName(array)
 
 function renderCategorys() {
-  arrayOfTabs = bookmarkStorage.getArrayFromLS();
   display.paintCategorys(mapNamesOut(arrayOfTabs));
 }
 
@@ -225,8 +229,8 @@ el.catList.addEventListener("click", (e) => {
       });
 
       deleteAudio.play();
-      // save
-      save();
+      // saveBookmarks
+      saveBookmarks();
 
       if (arrayOfTabs.length === 0) {
         startUp();
@@ -296,7 +300,7 @@ el.addCatBtn.addEventListener("click", (e) => {
     // sort array by name
     sortArrayByName(arrayOfTabs);
     // save
-    save();
+    saveBookmarks();
     // addAudio.play();
     display.showAlert("A new category was added", "success", 1500);
     // hide form
@@ -345,7 +349,7 @@ el.addBookmarkBtn.addEventListener("click", (e) => {
   addBookmarkAudio.play();
 
   // save
-  save();
+  saveBookmarks();
   el.bookmarkForm.reset();
   display.displayNone(el.bookmarkForm);
   display.showAlert("You added a bookmark!", "success");
@@ -379,7 +383,7 @@ el.bookmarkList.addEventListener("click", (e) => {
     [arr[index], arr[moveTo]] = [arr[moveTo], arr[index]];
     btnAudio.play();
     // save
-    save();
+    saveBookmarks();
     renderBookmarks();
     return;
   }
@@ -402,7 +406,7 @@ el.bookmarkList.addEventListener("click", (e) => {
     [arr[index], arr[moveTo]] = [arr[moveTo], arr[index]];
     btnAudio.play();
     // save
-    save();
+    saveBookmarks();
     renderBookmarks();
     return;
   }
@@ -418,7 +422,7 @@ el.bookmarkList.addEventListener("click", (e) => {
       arrayOfTabs[catIndex].arrayOfBookmarks.splice(deleteIndex, 1);
       deleteAudio.play();
       // save
-      save();
+      saveBookmarks();
       renderBookmarks();
       display.showAlert("You deleted a bookmark!", "success");
       return;
@@ -501,7 +505,7 @@ el.inBtnSaveDateReminder.addEventListener("click", (e) => {
   display.showAlert("A date reminder was saved", "success", 1500);
   addTabAudio.play();
   this.formDateReminder.reset();
-  dateReminderStorage.saveArrayToLS(arrayDateReminder);
+  saveDateReimnders();
   display.renderEditDateReminders(arrayDateReminder);
 
   display.renderShowDateReminders(filterDateArray(arrayDateReminder));
@@ -522,7 +526,7 @@ el.outULEditDateReminder.addEventListener("click", (e) => {
     display.showAlert("A date reminder was deleted", "success", 1500);
     deleteAudio.play();
     // save to  local storage
-    dateReminderStorage.saveArrayToLS(arrayDateReminder);
+    saveDateReimnders();
     // redisplay
     display.renderEditDateReminders(arrayDateReminder);
     display.renderShowDateReminders(filterDateArray(arrayDateReminder));
@@ -557,7 +561,7 @@ el.inBtnSaveReminder.addEventListener("click", (e) => {
   display.showAlert("A weekly reminder was saved", "success", 1500);
   this.formReminder.reset();
   // save to  local storage
-  reminderStorage.saveArrayToLS(arrayWeeklyReminder);
+  saveWeeklyReminders();
   // redisplay
   display.renderEditReminders(arrayWeeklyReminder);
   display.renderShowReminders(filterWeeklyArray(arrayWeeklyReminder));
@@ -576,7 +580,7 @@ el.outUlEditReminder.addEventListener("click", (e) => {
     arrayWeeklyReminder.splice(deleteIndex, 1);
     deleteAudio.play();
     // save to  local storage
-    reminderStorage.saveArrayToLS(arrayWeeklyReminder);
+    saveWeeklyReminders();
     // redisplay
     display.renderEditReminders(arrayWeeklyReminder);
     display.renderShowReminders(filterWeeklyArray(arrayWeeklyReminder));
