@@ -44,14 +44,17 @@ window.onload = function () {
 };
 //Start Up
 function startUp() {
-  arrayOfTabs = bookmarkStorage.getArrayFromLS();
-  renderCategorys();
-  // If you have Home catogory display it's bookmarks
-  HomeList();
+  bookmarkStartUp();
   // show the date
   getAndShowDate();
   weeklyReminderStartUp();
   reminderDateStartUp();
+}
+function bookmarkStartUp() {
+  arrayOfTabs = bookmarkStorage.getArrayFromLS();
+  renderCategorys();
+  // If you have Home catogory display it's bookmarks
+  HomeList();
 }
 function weeklyReminderStartUp() {
   // grad array from file an set to arrayWeeklyReminder
