@@ -9,6 +9,7 @@ let arrayWeeklyReminder;
 let arrayDateReminder;
 let today = new Date();
 let todaysDayCode = today.getDay();
+let currentDate = today.getDate();
 let currentYear = today.getFullYear();
 let currentMonth = 1 + today.getMonth();
 const BOOKMARK_STORAGE_KEY = "fileMobileBookmark10122019DEBX";
@@ -68,6 +69,39 @@ function weeklyReminderStartUp() {
 function reminderDateStartUp() {
   // grad array from file an set to arrayWeeklyReminder
   arrayDateReminder = dateReminderStorage.getArrayFromLS();
+  // **************************************************
+  // delete old date reminders
+  let deleteIndexs = [];
+  // push delete indexs into a array
+  for (let i = 0; i < arrayDateReminder.length; i++) {
+    if (arrayDateReminder[i].year < currentYear) {
+      deleteIndexs.push(i);
+      continue;
+    }
+    if (
+      arrayDateReminder[i].year === currentYear &&
+      arrayDateReminder[i].month < currentMonth
+    ) {
+      deleteIndexs.push(i);
+      continue;
+    }
+    if (
+      arrayDateReminder[i].year === currentYear &&
+      arrayDateReminder[i].month === currentMonth &&
+      arrayDateReminder[i].day < currentDate
+    ) {
+      deleteIndexs.push(i);
+      continue;
+    }
+  }
+  // reverse arrray
+  deleteIndexs.reverse();
+  // delete all old reminders
+  for (let i of deleteIndexs) {
+    arrayDateReminder.splice(i, 1);
+  }
+  saveDateReimnders();
+  // *****************************************************
   // send to display
   display.renderEditDateReminders(arrayDateReminder);
   // check list for year and month | show if year and month are current
