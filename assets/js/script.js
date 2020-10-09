@@ -281,19 +281,6 @@ el.catList.addEventListener("click", (e) => {
   }
   // event delegation
   if (e.target.classList.contains("cat")) {
-    // set's the current target active
-    // e.target.parentElement.classList.add("active");
-    // //The Next code is to set the current tab color white with the active class
-    // var el = document.querySelectorAll(".cat");
-    // for (let i = 0; i < el.length; i++) {
-    //   el[i].onclick = function () {
-    //     var c = 0;
-    //     while (c < el.length) {
-    //       el[c++].className = "cat";
-    //     }
-    //     el[i].className = "cat active";
-    //   };
-    // } // End code to set the active class
     let tabList = document.getElementsByClassName("catClass");
     // create an array from an array like object
     let newArray = Array.from(tabList);
