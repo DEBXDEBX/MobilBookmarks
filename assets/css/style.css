@@ -32,6 +32,7 @@ h1 {
 }
 .active {
   color: white;
+  box-shadow: 3px 2px 4px white;
 }
 nav ul {
   display: flex;
@@ -195,24 +196,25 @@ h3 {
   font-size: 0.8rem;
   padding: 4rem;
 }
-#binaryPtag {
+/* #binaryPtag {
   /* display: flex;
   flex-wrap: wrap;
   justify-content: center; */
-  /* color: red; */
-}
+/* color: red; */
+*/
 
 /* on or off line  */
-.online,
-.offline {
-  text-align: center;
-}
+
+
 
 .offline {
   color: red;
   text-shadow: 2px 2px red;
 }
-
+h1.online,
+h1.offline {
+  text-align: center;
+}
 /* *********************************** */
 /* google search  */
 #googleSearchContainer {

@@ -179,7 +179,7 @@ const HomeList = () => {
   });
   //  if you found Home display it's bookmarks and and active class
   if (index >= 0) {
-    newArray[index].classList.add("active");
+    newArray[index].parentElement.classList.add("active");
     catIndex = index;
     renderBookmarks();
   }
@@ -282,7 +282,7 @@ el.catList.addEventListener("click", (e) => {
   // event delegation
   if (e.target.classList.contains("cat")) {
     // set's the current target active
-    e.target.classList.add("active");
+    e.target.parentElement.classList.add("active");
     //The Next code is to set the current tab color white with the active class
     var el = document.querySelectorAll(".cat");
     for (let i = 0; i < el.length; i++) {

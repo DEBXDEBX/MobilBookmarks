@@ -155,7 +155,7 @@ class Display {
 
   //Method
   onlineMessage() {
-    this.elements.onLineStatus.innerHTML = `<H1 class="online">Online</H1>`;
+    this.elements.onLineStatus.innerHTML = `<h1 class="online">Online</h1>`;
     // Timeout after 4 sec
     let displayTime = 7000;
     setTimeout(function () {
@@ -165,7 +165,7 @@ class Display {
 
   //Method
   offlineMessage() {
-    this.elements.onLineStatus.innerHTML = `<H1 class="offline">Offline</H1>`;
+    this.elements.onLineStatus.innerHTML = `<h1 class="offline">Offline</h1>`;
   }
 
   //Method
