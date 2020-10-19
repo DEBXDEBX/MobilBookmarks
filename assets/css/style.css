@@ -11,7 +11,7 @@ html,
 body {
   font-family: "Chelsea Market", cursive;
   line-height: 1.7em;
-  background-color: black;
+  /* background-color: black; */
 }
 a {
   text-decoration: none;
@@ -32,7 +32,8 @@ h1 {
 }
 .active {
   color: white;
-  box-shadow: 3px 2px 4px white;
+  /* box-shadow: 3px 2px 4px white; */
+  box-shadow: 5px 4px 9px black;
   transform: scale(1.1);
 }
 nav ul {
@@ -52,6 +53,7 @@ nav ul {
   padding: 0.45rem;
   color: var(--primary-color);
   text-align: center;
+  box-shadow: 5px 4px 9px black;
 }
 
 nav ul li {
@@ -152,7 +154,8 @@ a:hover {
   margin: 20px 7px 20px 7px;
   padding: 5px 10px 5px 10px;
   /* box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.7); */
-  box-shadow: 3px 3px 3px rgb(103, 241, 11);
+  /* box-shadow: 3px 3px 3px rgb(103, 241, 11); */
+  box-shadow: 5px 4px 9px black;
   border-radius: 10% / 50%;
 }
 
@@ -224,7 +227,9 @@ h1.offline {
   justify-content: center;
   margin: 0 auto;
 }
-
+#googleSearchInput {
+  box-shadow: 1px 2px 4px black;
+}
 .cat:hover {
   cursor: pointer;
 }
