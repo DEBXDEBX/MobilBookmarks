@@ -53,6 +53,13 @@ function startUp() {
 }
 function bookmarkStartUp() {
   arrayOfTabs = bookmarkStorage.getArrayFromLS();
+  if (arrayOfTabs.length === 0) {
+    const homeTab = new Tab("Home");
+    const amazonBM = new Bookmark("Amazon", "https://www.amazon.com/");
+    const googleBM = new Bookmark("Google", "https://www.google.com/");
+    homeTab.arrayOfBookmarks.push(amazonBM, googleBM);
+    arrayOfTabs.push(homeTab);
+  }
   renderCategorys();
   // If you have Home catogory display it's bookmarks
   HomeList();
@@ -281,12 +288,10 @@ el.catList.addEventListener("click", (e) => {
   }
   // event delegation
   if (e.target.classList.contains("cat")) {
-    let tabList = document.getElementsByClassName("catClass");
-    // create an array from an array like object
-    let newArray = Array.from(tabList);
-    newArray.forEach((item) => {
-      item.classList.remove("active");
-    });
+    const element = document.querySelector(".catClass.active");
+    if (element) {
+      element.classList.remove("active");
+    }
     // add active class
     e.target.parentElement.classList.add("active");
 
@@ -304,7 +309,7 @@ el.addCatBtn.addEventListener("click", (e) => {
   // grab the text
   let catName = el.textCat.value.trim();
   // check if text is empty
-  if (catName === "") {
+  if (!catName) {
     warning1Audio.play();
     display.showAlert("Please enter a name for the Categroy!", "error");
     return;
