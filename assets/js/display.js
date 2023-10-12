@@ -40,19 +40,7 @@ class Display {
   clearBookmarkDisplay() {
     this.elements.bookmarkList.innerHTML = "";
   } // End clearPrimaryDisplay()
-  //Method
-  showCatForm() {
-    this.displayNone(this.elements.bookmarkHeading);
-    this.displayNone(this.elements.bookmarkForm);
-    this.displayBlock(this.elements.catForm);
-  }
-  hideCatForm() {
-    this.displayNone(this.elements.catForm);
-  }
-  //Method
-  showBookmarkForm() {
-    this.displayBlock(this.elements.bookmarkForm);
-  }
+ 
   paintCategorys(mappedArray) {
     this.displayBlock(this.elements.catHeading);
     this.displayNone(catList);
@@ -98,7 +86,7 @@ class Display {
     // This function creates the div and append's it to the div.
     let newElement = document.createElement("div");
     //add a title with the web address
-    newElement.innerHTML = `<div class='myFlexItem'><h4><a href="${address}" >${name}</a></h4></div>`;
+    newElement.innerHTML = `<div class='myFlexItem'><h4><a href="${address}" target="_blank">${name}</a></h4></div>`;
 
     this.elements.bookmarkList.appendChild(newElement);
   }
@@ -158,21 +146,6 @@ class Display {
     this.elements.onLineStatus.innerHTML = `<h1 class="offline">Offline</h1>`;
   }
 
-  // //Method
-  renderEditReminders(array) {
-    let html = "";
-
-    array.forEach((element, index) => {
-      html += `<li data-index="${index}" class="editReminders">${element.day} ${element.text}<i
-        title="Delete Reminder"
-        class="delete-reminder trash fas fa-trash-alt"
-      ></i
-    ></li>`;
-    });
-    // paint reminders
-    this.elements.outUlEditReminder.innerHTML = html;
-  }
-
   //Method
   renderShowReminders(array) {
     let html = "";
@@ -182,21 +155,6 @@ class Display {
     });
     // paint reminders
     this.elements.outUlShowReminder.innerHTML = html;
-  }
-
-  //Method
-  renderEditDateReminders(array) {
-    let html = "";
-
-    array.forEach((element, index) => {
-      html += `<li data-index="${index}" class="editDateReminders">${element.stringDate} ${element.text}<i
-        title="Delete Date Reminder"
-        class="delete-date-reminder trash fas fa-trash-alt"
-      ></i
-    ></li>`;
-    });
-    // paint reminders
-    this.elements.outULEditDateReminder.innerHTML = html;
   }
 
   //Method

@@ -38,33 +38,13 @@
     <title>Bookmarks</title>
   </head>
   <body>
-    <audio id="addBookmarkAudio">
-      <source src="assets/sound/addBookmark.wav" type="audio/wav" />
-    </audio>
-    <audio id="addTabAudio">
-      <source src="assets/sound/addTab.wav" type="audio/wav" />
-    </audio>
-    <audio id="btnAudio">
-      <source src="assets/sound/btn.wav" type="audio/wav" />
-    </audio>
-    <audio id="cancelAudio">
-      <source src="assets/sound/cancel.wav" type="audio/wav" />
-    </audio>
+
     <audio id="clickAudio">
       <source src="assets/sound/click.wav" type="audio/wav" />
     </audio>
-    <audio id="deleteAudio">
-      <source src="assets/sound/delete.wav" type="audio/wav" />
-    </audio>
     <audio id="tabAudio">
       <source src="assets/sound/tab.wav" type="audio/wav" />
-    </audio>
-    <audio id="warning1Audio">
-      <source src="assets/sound/warning1.wav" type="audio/wav" />
-    </audio>
-    <audio id="warning2Audio">
-      <source src="assets/sound/warning2.wav" type="audio/wav" />
-    </audio>
+    </audio> 
 
     <header>
       <h3 id="catHeading">
@@ -73,34 +53,6 @@
       <nav>
         <ul id="catList"></ul>
       </nav>
-      <form id="catForm" autocomplete="off">
-        <div class="form-group">
-          <input
-            id="textCat"
-            type="text"
-            autofocus
-            class="form-control"
-            placeholder="Category Name"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            id="catAddBtn"
-            class="btn btn-primary form-control"
-            type="submit"
-            value="Add Category"
-          />
-        </div>
-        <div class="form-group">
-          <button
-            id="catCancel"
-            class="btn btn-warning form-control"
-            type="button"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
     </header>
 
     <section>
@@ -108,43 +60,6 @@
         Bookmarks
       </h3>
 
-      <!-- <form id="bookmarkForm" autocomplete="off">
-        <div class="form-group">
-          <input
-            id="textBookmark"
-            type="text"
-            autofocus
-            class="form-control"
-            placeholder="Bookmark Name"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            id="textURL"
-            type="text"
-            autofocus
-            class="form-control"
-            placeholder="Bookmark Address"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            id="bookmarkAddBtn"
-            class="btn btn-primary form-control"
-            type="submit"
-            value="Add Bookmark"
-          />
-        </div>
-        <div class="form-group">
-          <button
-            id="bookmarkCancel"
-            class="btn btn-warning form-control"
-            type="button"
-          >
-            Cancel
-          </button>
-        </div>
-      </form> -->
     </section>
 
     <nav>
@@ -181,11 +96,6 @@
 
 
 
-<!-- 
-    <div id="binary">
-      <h1 id="binaryH1Tag"></h1>
-    </div> -->
-
     <!-- Message Modal -->
     <div id="myMessageModal" class="modal fade" role="dialog">
       <div class="modal-dialog modal-lg">
@@ -199,111 +109,7 @@
     </div>
     <!-- end of modal  -->
 
-    <!-- ***************************************** reminder code ***************************************** -->
-  
-    <!-- <ul id="outUlEditReminder"></ul>
-    <ul id="outULEditDateReminder"></ul> -->
 
-    <!-- <div id="remindersDiv"> -->
-
-      <!-- ***************************************** date remider code ******************* -->
-      <!-- <div class="dateReminder">
-      <h4>Date Reminders</h4>
-      <ul id="outULEditDateReminder"></ul>
-      <h4>Date Reminder Form</h4>
-      <form id="formDateReminder" action="">
-      
-        <div class="form-group">
-          <input
-            id="inDateDateReminder"
-            type="date"
-      
-            class="form-control"
-          
-          />
-        </div>
-        <div class="form-group">
-          <input
-            id="inTextDateReminder"
-            type="text"
-            autofocus
-            autocomplete="off"
-            class="form-control"
-            placeholder="Reminder"
-          />
-        </div>
-        <div class="form-group">
-          <input
-            id="inBtnSaveDateReminder"
-            class="btn btn-primary form-control"
-            type="submit"
-            value="Save Date Reminder"
-          />
-        </div>
-        <div class="form-group">
-          <button
-            id="inBtnCancelDateReminder"
-            class="btn btn-warning form-control"
-            type="button"
-          >
-            Cancel
-          </button>
-        </div>
-      </form>
-      </div> -->
-      
-      <!-- **************************************date reminder code end************************************* -->
-      
-       <!-- ******************************weeklyReminder code ********************** -->
-      <!-- <div class="weeklyReminder">
-                    <h4>Weekly Reminders</h4>
-              <ul id="outUlEditReminder"></ul>
-          
-      
-              <h4>Weekly Reminder Form</h4>
-            <form id="formReminder">
-              <div class="form-group">
-                <select id="inSelectDayCode" name="cars">
-                  <option value="0">Sunday</option>
-                  <option value="1">Monday</option>
-                  <option value="2">Tuesday</option>
-                  <option value="3">Wednesday</option>
-                  <option value="4">Thursday</option>
-                  <option value="5">Fridayday</option>
-                  <option value="6">Saturday</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <input
-                  id="inTextReminder"
-                  type="text"
-                  autofocus
-                  autocomplete="off"
-                  class="form-control"
-                  placeholder="Reminder"
-                />
-              </div>
-              <div class="form-group">
-                <input
-                  id="inBtnSaveReminder"
-                  class="btn btn-primary form-control"
-                  type="submit"
-                  value="Save Reminder"
-                />
-              </div>
-              <div class="form-group">
-                <button
-                  id="inBtnCancelReminder"
-                  class="btn btn-warning form-control"
-                  type="button"
-                >
-                  Cancel
-                </button>
-              </div>
-            </form>
-          </div> -->
-          <!-- *************************weeklyReminder code end ************** -->
-        <!-- </div> -->
 
         <h5 id="pie">&#8719;</h5>
     <!-- Optional JavaScript -->

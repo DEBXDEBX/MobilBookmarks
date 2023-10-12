@@ -26,10 +26,7 @@ h1 {
   color: var(--primary-color);
   text-shadow: 2px 2px var(--secondary-color);
 }
-#catForm,
-#bookmarkForm {
-  display: none;
-}
+
 .active {
   color: white;
   /* box-shadow: 3px 2px 4px white; */
@@ -101,39 +98,7 @@ h3 > span {
   font-weight: 900;
   color: #2de11d;
 }
-#catForm,
-#bookmarkForm {
-  max-width: 70%;
-  margin: 14px auto;
-}
-.delete-item {
-  color: red;
-  display: inline;
-}
-.moveUp {
-  color: green;
-  display: inline;
-}
-.moveDown {
-  color: blue;
-  display: inline;
-}
-.spanDiv {
-  text-align: center;
-}
-.myFlexItem:hover .spanDiv {
-  text-align: center;
-  display: block;
-}
-span {
-  font-weight: bold;
-  margin: 0px 11px;
-}
 
-.myFlexItem:hover .delete-item {
-  text-align: center;
-  display: inline;
-}
 a {
   font-size: 30px;
   font-weight: bold;
@@ -172,40 +137,6 @@ h3 {
   text-shadow: 2px 2px black;
   text-align: center;
 }
-/* The gap between the show form icons  */
-#catAdd,
-#bookmarkAdd {
-  margin: 0px 46px;
-}
-
-.delete-category {
-  /* margin-left: 40px; */
-  color: black;
-}
-.delete-category:hover {
-  color: white;
-}
-
-/* ********************* */
-#binary {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  /* position: absolute; */
-  color: #0f0;
-  /* text-shadow: 2px 2px 2px #085f0c; */
-  /* z-index: -1; */
-  width: 100%;
-  height: 100%;
-  font-size: 0.8rem;
-  padding: 4rem;
-}
-/* #binaryPtag {
-  /* display: flex;
-  flex-wrap: wrap;
-  justify-content: center; */
-/* color: red; */
-*/
 
 /* on or off line  */
 .offline {
@@ -231,21 +162,7 @@ h1.offline {
 .cat:hover {
   cursor: pointer;
 }
-.moveUp:hover {
-  cursor: pointer;
-}
-.moveDown:hover {
-  cursor: pointer;
-}
-.delete-item {
-  cursor: pointer;
-}
-.fas:hover {
-  cursor: pointer;
-}
-input[type="text"]:hover {
-  cursor: pointer;
-}
+
 #todayDate {
   text-align: center;
   color: #e52674;
@@ -259,45 +176,11 @@ input[type="text"]:hover {
   bottom: 0px;
   right: 5px;
 }
-.editReminders,
-.editDateReminders {
-  color: #e52674;
-  text-align: center;
-}
-.delete-reminder,
-.delete-date-reminder {
-  color: red;
-  margin-left: 20px;
-}
-.delete-reminder:hover,
-.delete-date-reminder:hover {
-  color: rgb(134, 38, 38);
-}
-#formReminder,
-#formDateReminder {
-  max-width: 500px;
-  width: 80%;
-  margin: 0 auto;
-}
-#inSelectDayCode {
-  color: blueviolet;
-  width: 100%;
-  padding: 0.375rem 0.75rem;
-}
-.weeklyReminder,
-.dateReminder {
-  background-color: #4e5357;
-  width: 500px;
-  margin: 50px auto;
-  padding: 33px;
-  border-radius: 33px;
-}
+
 li {
   list-style-type: none;
 }
-.trash:hover {
-  cursor: pointer;
-}
+
 h4 {
   color: var(--primary-color);
   text-align: center;
