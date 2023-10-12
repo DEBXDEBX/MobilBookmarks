@@ -158,7 +158,7 @@ class Display {
     this.elements.onLineStatus.innerHTML = `<h1 class="offline">Offline</h1>`;
   }
 
-  //Method
+  // //Method
   renderEditReminders(array) {
     let html = "";
 
