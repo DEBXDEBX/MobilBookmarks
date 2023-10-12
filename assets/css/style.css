@@ -185,9 +185,7 @@ h3 {
 .delete-category:hover {
   color: white;
 }
-#catSpan {
-  margin-right: 40px;
-}
+
 /* ********************* */
 #binary {
   display: flex;
