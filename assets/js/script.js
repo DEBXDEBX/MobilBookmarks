@@ -45,14 +45,32 @@ window.onload = function () {
 };
 //Start Up
 function startUp() {
-  bookmarkStartUp();
-  // show the date
-  getAndShowDate();
-  weeklyReminderStartUp();
-  reminderDateStartUp();
+  // bookmarkStartUp();
+  // // show the date
+  // getAndShowDate();
+  // weeklyReminderStartUp();
+  // reminderDateStartUp();
+  loadJSONData("./bookMark.json")
 }
-function bookmarkStartUp() {
-  arrayOfTabs = bookmarkStorage.getArrayFromLS();
+
+
+async function loadJSONData(END_POINT) {
+  try {
+    const response = await fetch(END_POINT);
+    const myData = await response.json();
+    console.log(myData);
+    let {arrayDateReminder, arrayOfTabs, arrayWeeklyReminder } = myData;
+
+    bookmarkStartUp(arrayOfTabs);
+    weeklyReminderStartUp(arrayWeeklyReminder);
+    reminderDateStartUp(arrayDateReminder)
+  } catch (error) {
+    console.log(error);
+  }
+}
+// **************************************************
+function bookmarkStartUp(data) {
+  arrayOfTabs = data;
   if (arrayOfTabs.length === 0) {
     const homeTab = new Tab("Home");
     const amazonBM = new Bookmark("Amazon", "https://www.amazon.com/");
@@ -64,16 +82,16 @@ function bookmarkStartUp() {
   // If you have Home catogory display it's bookmarks
   HomeList();
 }
-function weeklyReminderStartUp() {
+function weeklyReminderStartUp(data) {
   // grad array from file an set to arrayWeeklyReminder
-  arrayWeeklyReminder = reminderStorage.getArrayFromLS();
+  arrayWeeklyReminder = data;
   // send to display
   display.renderEditReminders(arrayWeeklyReminder);
 
   display.renderShowReminders(filterWeeklyArray(arrayWeeklyReminder));
 }
 
-function reminderDateStartUp() {
+function reminderDateStartUp(data) {
   // grad array from file an set to arrayWeeklyReminder
   arrayDateReminder = dateReminderStorage.getArrayFromLS();
   // **************************************************
