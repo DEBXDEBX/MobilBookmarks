@@ -167,4 +167,14 @@ class Display {
     // paint reminders
     this.elements.outULShowDateReminder.innerHTML = html;
   }
+
+    //Method
+    showReminderDiv() {
+      this.displayBlock(this.elements.remindersDiv);
+    }
+
+    //Method
+    hideReminderDiv() {
+      this.displayNone(this.elements.remindersDiv);
+    }
 } // End class

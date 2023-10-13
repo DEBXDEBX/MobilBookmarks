@@ -7,6 +7,7 @@ let bookmarkIndex = -243;
 let arrayWeeklyReminder;
 // date reminder array
 let arrayDateReminder;
+let showReminders =false;
 let today = new Date();
 let todaysDayCode = today.getDay();
 let currentDate = today.getDate();
@@ -261,4 +262,11 @@ document.querySelector("#stackOverflowBtn").addEventListener("click", (e) => {
 el.pieBtn.addEventListener("click", (e) => {
   clickAudio.play();
   // display.displayBlock(this.remindersDiv);
+  showReminders = !showReminders;
+  if(showReminders){
+    display.showReminderDiv();
+    window.scrollTo(0, document.body.scrollHeight);
+  }else {
+    display.hideReminderDiv();
+  }
 });
