@@ -184,4 +184,5 @@ li {
 h4 {
   color: var(--primary-color);
   text-align: center;
+  margin: 0;
 }
